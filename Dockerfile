@@ -58,9 +58,5 @@ a2enmod ssl
 RUN ln -sf /dev/stdout /var/log/apache2/access.log && \
     ln -sf /dev/stderr /var/log/apache2/error.log
 
-# Disable default sites
-#RUN rm /etc/apache2/sites-enabled/000-default.conf \
-#    && rm /etc/apache2/sites-available/000-default.conf
-
 # Force start of container to also also autostart apache
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
