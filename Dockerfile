@@ -21,11 +21,10 @@ useradd _shibd --uid 799 --gid 799 \
 # Solution from https://github.com/phusion/baseimage-docker/issues/58
 # Update apt cache to use fastest local mirror
 RUN \
-DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
+export DEBIAN_FRONTEND=noninteractive && \
+export DEBCONF_NONINTERACTIVE_SEEN=true && \
 apt-get update && \
-DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
-apt-get install -y apt-utils less nano emacs-nox curl apache2 libapache2-mod-shib2 &&
-DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
+apt-get install -y apt-utils less nano emacs-nox curl apache2 libapache2-mod-shib2 && \
 apt-get clean
 
 # Enable directory colors:
