@@ -12,7 +12,7 @@ FROM debian:stretch
 ENV LANG C.UTF-8
 
 # Update apt sources to fastest local mirror
-RUN sed -i "s/deb.debian.org/mirrors.kernel.org/g" /etc/apt/sources.list
+#RUN sed -i "s/deb.debian.org/mirrors.kernel.org/g" /etc/apt/sources.list
 
 # Make apt-get commands temporarily non-interactive
 # Solution from https://github.com/phusion/baseimage-docker/issues/58
