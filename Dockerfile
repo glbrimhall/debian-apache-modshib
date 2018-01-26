@@ -55,8 +55,8 @@ a2enmod deflate && \
 a2enmod ssl 
 
 # Pipe apache logging to stout/stderr
-#RUN ln -sf /dev/stdout /var/log/apache2/access.log && \
-#    ln -sf /dev/stderr /var/log/apache2/error.log
+RUN ln -sf /dev/stdout /var/log/apache2/access.log && \
+    ln -sf /dev/stderr /var/log/apache2/error.log
 
 # Disable default sites
 #RUN rm /etc/apache2/sites-enabled/000-default.conf \
